@@ -11,8 +11,8 @@ class HomeDesktopView extends StatelessWidget {
   final ScreenUiHelper? uiHelpers;
   final HomeViewModel? model;
 
-  const HomeDesktopView({Key? key, this.uiHelpers, this.model})
-      : super(key: key);
+  const HomeDesktopView({Key? key, this.uiHelpers, this.model}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +43,7 @@ class HomeDesktopView extends StatelessWidget {
                           color: uiHelpers!.textPrimaryColor,
                         ),
                         Text(
-                          'Shashi Kumar',
+                          'Muhammad Asim Jawad',
                           style: uiHelpers!.title,
                         )
                       ],
@@ -52,8 +52,7 @@ class HomeDesktopView extends StatelessWidget {
                       children: [
                         TranslateOnHover(
                           child: TextButton(
-                              onPressed: () => model!
-                                  .navigateToUrl(PersonalDetails.resumeLink),
+                              onPressed: () => model!.navigateToUrl(PersonalDetails.resumeLink),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
@@ -64,8 +63,7 @@ class HomeDesktopView extends StatelessWidget {
                         ),
                         TranslateOnHover(
                           child: TextButton(
-                              onPressed: () => model!
-                                  .navigateToUrl(PersonalDetails.whatsappLink),
+                              onPressed: () => model!.navigateToUrl(PersonalDetails.whatsappLink),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
@@ -88,28 +86,18 @@ class HomeDesktopView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: model!.skills.keys
                           .map((e) => Container(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8),
+                                padding: const EdgeInsets.symmetric(vertical: 8),
                                 width: uiHelpers!.width! * 0.28,
                                 child: Neumorphic(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 15, vertical: 10),
-                                  style: NeumorphicStyle(
-                                      shape: NeumorphicShape.concave,
-                                      boxShape: NeumorphicBoxShape.roundRect(
-                                          BorderRadius.circular(12)),
-                                      depth: 8,
-                                      intensity: 0.6,
-                                      color: uiHelpers!.surfaceColor),
+                                  padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                                  style: NeumorphicStyle(shape: NeumorphicShape.concave, boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(12)), depth: 8, intensity: 0.6, color: uiHelpers!.surfaceColor),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Neumorphic(
                                           style: NeumorphicStyle(
-                                            depth: NeumorphicTheme.embossDepth(
-                                                context),
-                                            boxShape: const NeumorphicBoxShape
-                                                .circle(),
+                                            depth: NeumorphicTheme.embossDepth(context),
+                                            boxShape: const NeumorphicBoxShape.circle(),
                                           ),
                                           child: Image.asset(
                                             model!.skills[e]!,
@@ -135,20 +123,15 @@ class HomeDesktopView extends StatelessWidget {
                           width: uiHelpers!.width! * 0.3,
                           child: Text(
                             PersonalDetails.shortIntro,
-                            style: uiHelpers!.body!.copyWith(
-                                fontWeight: FontWeight.w400,
-                                height: 2,
-                                color: uiHelpers!.textPrimaryColor),
+                            style: uiHelpers!.body!.copyWith(fontWeight: FontWeight.w400, height: 2, color: uiHelpers!.textPrimaryColor),
                           ),
                         ),
                         const SizedBox(
                           height: 15,
                         ),
                         IconWrrapper(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 15, vertical: 12),
-                          onTap: () =>
-                              model!.navigateToUrl(SocialLinks.githubLink),
+                          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+                          onTap: () => model!.navigateToUrl(SocialLinks.githubLink),
                           child: Row(
                             children: [
                               Icon(
