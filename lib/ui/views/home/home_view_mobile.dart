@@ -12,8 +12,7 @@ class HomeMobileView extends StatelessWidget {
   final ScreenUiHelper? uiHelpers;
   final HomeViewModel? model;
 
-  const HomeMobileView({Key? key, this.uiHelpers, this.model})
-      : super(key: key);
+  const HomeMobileView({Key? key, this.uiHelpers, this.model}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,14 +26,12 @@ class HomeMobileView extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset('assets/images/sk_logo.png',
-                    height: 40, width: 40, color: uiHelpers!.textPrimaryColor),
+                Image.asset('assets/images/sk_logo.png', height: 40, width: 40, color: uiHelpers!.textPrimaryColor),
                 IconWrrapper(
                   margin: const EdgeInsets.all(0),
                   color: uiHelpers!.primaryColor,
                   padding: const EdgeInsets.all(8),
-                  onTap: () =>
-                      model!.navigateToUrl('mailto:' + PersonalDetails.email),
+                  onTap: () => model!.navigateToUrl('mailto:' + PersonalDetails.email),
                   child: const Icon(
                     MenuIcons.contactIcon,
                     color: Colors.white,
@@ -53,7 +50,7 @@ class HomeMobileView extends StatelessWidget {
               style: uiHelpers!.headline,
             ),
             Text(
-              'Shashi Kumar',
+              'Muhammad Asim Jawad',
               style: uiHelpers!.headline,
             ),
             const SizedBox(
@@ -62,19 +59,13 @@ class HomeMobileView extends StatelessWidget {
             SizedBox(
                 height: 175.0,
                 child: CarouselSlider.builder(
-                  options: CarouselOptions(
-                      autoPlayCurve: Curves.easeOutQuart,
-                      autoPlay: true,
-                      viewportFraction: 1),
+                  options: CarouselOptions(autoPlayCurve: Curves.easeOutQuart, autoPlay: true, viewportFraction: 1),
                   itemCount: PersonalDetails.skillDisplayList.length,
                   itemBuilder: (_, index, realIndex) {
                     return Container(
                       width: uiHelpers!.width,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 20),
-                      decoration: BoxDecoration(
-                          color: PersonalDetails.skillDisplayList[index].color,
-                          borderRadius: BorderRadius.circular(12)),
+                      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                      decoration: BoxDecoration(color: PersonalDetails.skillDisplayList[index].color, borderRadius: BorderRadius.circular(12)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -89,10 +80,7 @@ class HomeMobileView extends StatelessWidget {
                           ),
                           Text(
                             PersonalDetails.skillDisplayList[index].title!,
-                            style: uiHelpers!.title!.copyWith(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontFamily: SystemProperties.fontName),
+                            style: uiHelpers!.title!.copyWith(color: Colors.white, fontSize: 18, fontFamily: SystemProperties.fontName),
                           ),
                         ],
                       ),
@@ -106,8 +94,7 @@ class HomeMobileView extends StatelessWidget {
               IconWrrapper(
                 margin: const EdgeInsets.all(0),
                 color: uiHelpers!.primaryColor,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
                 onTap: () => model!.navigateToUrl(PersonalDetails.whatsappLink),
                 child: Text(
                   'Contact',
@@ -115,8 +102,7 @@ class HomeMobileView extends StatelessWidget {
                 ),
               ),
               IconWrrapper(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
                 onTap: () => model!.navigateToUrl(PersonalDetails.resumeLink),
                 child: Text(
                   'Download CV',

@@ -60,8 +60,8 @@ class MainView extends HookWidget {
                       ),
                     ),
               body: ScreenTypeLayout(
-                desktop: CollapsibleSidebar(selectedIconColor: NeumorphicTheme.of(context)!.isUsingDark ? uiHelpers.primaryColor! : Colors.white, maxWidth: 250, avatarImg: const AssetImage('assets/images/s.jpg'), topPadding: 50, body: model.child, title: 'Shashi Kumar', items: model.collapsibleItem),
-                tablet: CollapsibleSidebar(maxWidth: 250, avatarImg: const AssetImage('assets/images/s.jpg'), topPadding: 50, body: model.child, title: 'Shashi Kumar', items: model.collapsibleItem),
+                desktop: CollapsibleSidebar(selectedIconColor: NeumorphicTheme.of(context)!.isUsingDark ? uiHelpers.primaryColor! : Colors.white, maxWidth: 250, avatarImg: const AssetImage('assets/images/s.jpg'), topPadding: 50, body: model.child, title: 'Muhammad Asim Jawad', items: model.collapsibleItem),
+                tablet: CollapsibleSidebar(maxWidth: 250, avatarImg: const AssetImage('assets/images/s.jpg'), topPadding: 50, body: model.child, title: 'Muhammad Asim Jawad', items: model.collapsibleItem),
                 mobile: SizedBox(
                   width: uiHelpers.width,
                   height: uiHelpers.height,

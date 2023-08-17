@@ -11,9 +11,9 @@ class HomeViewModel extends BaseViewModel {
   bool isShortIntroCompleted = false;
   Map<String, String> skills = {
     'Mobile Developer': 'assets/images/android.png',
-    'Web Developer': 'assets/images/web.png',
-    'Designer': 'assets/images/design.png',
-    'AI Enthusiast': 'assets/images/ml.png'
+    // 'Web Developer': 'assets/images/web.png',
+    // 'Designer': 'assets/images/design.png',
+    // 'AI Enthusiast': 'assets/images/ml.png'
   };
   void changeShortIntroToCompleted() {
     isShortIntroCompleted = true;

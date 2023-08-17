@@ -18,6 +18,7 @@ mixin ProjectIcons {
   static const IconData playstoreIcon = FlutterIcons.google_play_mco;
   static const IconData folderIcon = FlutterIcons.folder_fea;
   static const IconData websiteIcon = FlutterIcons.link_fea;
+  static const IconData apStoreIcon = FlutterIcons.app_store_ent;
 }
 
 mixin ContactIcons {

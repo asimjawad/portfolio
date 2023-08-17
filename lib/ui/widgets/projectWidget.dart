@@ -12,9 +12,8 @@ class ProjectWidget extends StatelessWidget {
   final int index;
   final Project project;
 
-  const ProjectWidget(
-      {Key? key, this.type, required this.index, required this.project})
-      : super(key: key);
+  const ProjectWidget({Key? key, this.type, required this.index, required this.project}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final UrlLauncherService _urlLauncherService = UrlLauncherService();
@@ -25,18 +24,9 @@ class ProjectWidget extends StatelessWidget {
       child: TranslateOnHover(
         child: Container(
           height: 250,
-          margin: EdgeInsets.only(
-              bottom: 15, right: uiHelpers.width! > 768 ? 15 : 0),
+          margin: EdgeInsets.only(bottom: 15, right: uiHelpers.width! > 768 ? 15 : 0),
           child: Neumorphic(
-            style: NeumorphicStyle(
-                shape: NeumorphicShape.convex,
-                shadowLightColor: uiHelpers.backgroundColor,
-                depth: 5,
-                intensity: 0.6,
-                color: uiHelpers.backgroundColor,
-                surfaceIntensity: 0.3,
-                boxShape:
-                    NeumorphicBoxShape.roundRect(BorderRadius.circular(12))),
+            style: NeumorphicStyle(shape: NeumorphicShape.convex, shadowLightColor: uiHelpers.backgroundColor, depth: 5, intensity: 0.6, color: uiHelpers.backgroundColor, surfaceIntensity: 0.3, boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(12))),
             child: Container(
               width: uiHelpers.width,
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
@@ -54,30 +44,46 @@ class ProjectWidget extends StatelessWidget {
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          if (project.websiteLink == null) const SizedBox() else IconButton(
-                                  icon: Icon(
-                                    ProjectIcons.websiteIcon,
-                                    color: uiHelpers.primaryColor,
-                                  ),
-                                  onPressed: () => _urlLauncherService
-                                      .launchUrl(project.websiteLink!),
-                                ),
-                          if (project.githubLink == null) const SizedBox() else IconButton(
-                                  icon: Icon(
-                                    ProjectIcons.githubIcon,
-                                    color: uiHelpers.primaryColor,
-                                  ),
-                                  onPressed: () => _urlLauncherService
-                                      .launchUrl(project.githubLink!),
-                                ),
-                          if (project.playstoreLink == null) const SizedBox() else IconButton(
-                                  icon: Icon(
-                                    ProjectIcons.playstoreIcon,
-                                    color: uiHelpers.primaryColor,
-                                  ),
-                                  onPressed: () => _urlLauncherService
-                                      .launchUrl(project.playstoreLink!),
-                                ),
+                          if (project.websiteLink == null)
+                            const SizedBox()
+                          else
+                            IconButton(
+                              icon: Icon(
+                                ProjectIcons.websiteIcon,
+                                color: uiHelpers.primaryColor,
+                              ),
+                              onPressed: () => _urlLauncherService.launchUrl(project.websiteLink!),
+                            ),
+                          if (project.githubLink == null)
+                            const SizedBox()
+                          else
+                            IconButton(
+                              icon: Icon(
+                                ProjectIcons.githubIcon,
+                                color: uiHelpers.primaryColor,
+                              ),
+                              onPressed: () => _urlLauncherService.launchUrl(project.githubLink!),
+                            ),
+                          if (project.playstoreLink == null)
+                            const SizedBox()
+                          else
+                            IconButton(
+                              icon: Icon(
+                                ProjectIcons.playstoreIcon,
+                                color: uiHelpers.primaryColor,
+                              ),
+                              onPressed: () => _urlLauncherService.launchUrl(project.playstoreLink!),
+                            ),
+                          if (project.appStoreLink == null)
+                            const SizedBox()
+                          else
+                            IconButton(
+                              icon: Icon(
+                                ProjectIcons.apStoreIcon,
+                                color: uiHelpers.primaryColor,
+                              ),
+                              onPressed: () => _urlLauncherService.launchUrl(project.appStoreLink!),
+                            ),
                         ],
                       ),
                     ],
@@ -90,21 +96,17 @@ class ProjectWidget extends StatelessWidget {
                   uiHelpers.verticalSpaceLow,
                   Text(
                     project.description,
-                    style:
-                        uiHelpers.body!.copyWith(fontWeight: FontWeight.w300),
+                    style: uiHelpers.body!.copyWith(fontWeight: FontWeight.w300),
                   ),
                   const Spacer(),
                   Wrap(
                     children: [
                       for (int i = 0; i < project.tools.length; i++)
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 4)
-                              .copyWith(right: 16),
+                          padding: const EdgeInsets.symmetric(vertical: 4).copyWith(right: 16),
                           child: Text(
                             project.tools[i],
-                            style: uiHelpers.body!.copyWith(
-                                fontWeight: FontWeight.w400,
-                                color: uiHelpers.textSecondaryColor),
+                            style: uiHelpers.body!.copyWith(fontWeight: FontWeight.w400, color: uiHelpers.textSecondaryColor),
                           ),
                         ),
                     ],
